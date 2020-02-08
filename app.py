@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 import config
 
 app = Flask(__name__)
@@ -14,7 +14,8 @@ except OSError:
 
 @app.route('/')
 def hello():
-    return "Hello World!"
+    #return "Hello World!"
+    return render_template("index.html",title="Home")
 
 @app.route('/<name>')
 def hello_name(name):
